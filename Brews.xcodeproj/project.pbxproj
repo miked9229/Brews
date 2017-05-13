@@ -14,6 +14,9 @@
 		92C60C811EC7B33400A3479C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92C60C7F1EC7B33400A3479C /* LaunchScreen.storyboard */; };
 		92C60C8C1EC7B33400A3479C /* BrewsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C60C8B1EC7B33400A3479C /* BrewsTests.swift */; };
 		92C60C971EC7B33400A3479C /* BrewsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C60C961EC7B33400A3479C /* BrewsUITests.swift */; };
+		92C60CA51EC7BA2C00A3479C /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92C60CA41EC7BA2C00A3479C /* FBSDKLoginKit.framework */; };
+		92C60CA71EC7BE7200A3479C /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92C60CA61EC7BE7200A3479C /* FBSDKCoreKit.framework */; };
+		92C60CA91EC7C11C00A3479C /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92C60CA81EC7C11C00A3479C /* Bolts.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,9 @@
 		92C60C921EC7B33400A3479C /* BrewsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BrewsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		92C60C961EC7B33400A3479C /* BrewsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewsUITests.swift; sourceTree = "<group>"; };
 		92C60C981EC7B33400A3479C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		92C60CA41EC7BA2C00A3479C /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		92C60CA61EC7BE7200A3479C /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		92C60CA81EC7C11C00A3479C /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +60,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92C60CA91EC7C11C00A3479C /* Bolts.framework in Frameworks */,
+				92C60CA51EC7BA2C00A3479C /* FBSDKLoginKit.framework in Frameworks */,
+				92C60CA71EC7BE7200A3479C /* FBSDKCoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,6 +112,9 @@
 				92C60C7D1EC7B33400A3479C /* Assets.xcassets */,
 				92C60C7F1EC7B33400A3479C /* LaunchScreen.storyboard */,
 				92C60C821EC7B33400A3479C /* Info.plist */,
+				92C60CA81EC7C11C00A3479C /* Bolts.framework */,
+				92C60CA61EC7BE7200A3479C /* FBSDKCoreKit.framework */,
+				92C60CA41EC7BA2C00A3479C /* FBSDKLoginKit.framework */,
 			);
 			path = Brews;
 			sourceTree = "<group>";
@@ -414,6 +426,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = C7H5VU6UVJ;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Brews",
+				);
+				"FRAMEWORK_SEARCH_PATHS[arch=*]" = /Users/michaeldoroff/Documents/FacebookSDKs;
 				INFOPLIST_FILE = Brews/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = FLEC.Brews;
@@ -427,6 +444,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = C7H5VU6UVJ;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Brews",
+				);
 				INFOPLIST_FILE = Brews/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = FLEC.Brews;
