@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		92A024731EC8B71500BD3404 /* LoginInViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A024721EC8B71500BD3404 /* LoginInViews.swift */; };
 		92C60C771EC7B33400A3479C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C60C761EC7B33400A3479C /* AppDelegate.swift */; };
 		92C60C791EC7B33400A3479C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C60C781EC7B33400A3479C /* ViewController.swift */; };
 		92C60C7C1EC7B33400A3479C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92C60C7A1EC7B33400A3479C /* Main.storyboard */; };
@@ -37,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		92A024701EC7C40D00BD3404 /* Brews.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Brews.entitlements; sourceTree = "<group>"; };
+		92A024721EC8B71500BD3404 /* LoginInViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginInViews.swift; sourceTree = "<group>"; };
 		92C60C731EC7B33400A3479C /* Brews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Brews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92C60C761EC7B33400A3479C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		92C60C781EC7B33400A3479C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -83,6 +86,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		92A024711EC8B6E500BD3404 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				92A024721EC8B71500BD3404 /* LoginInViews.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		92C60C6A1EC7B33300A3479C = {
 			isa = PBXGroup;
 			children = (
@@ -106,6 +117,8 @@
 		92C60C751EC7B33400A3479C /* Brews */ = {
 			isa = PBXGroup;
 			children = (
+				92A024711EC8B6E500BD3404 /* Views */,
+				92A024701EC7C40D00BD3404 /* Brews.entitlements */,
 				92C60C761EC7B33400A3479C /* AppDelegate.swift */,
 				92C60C781EC7B33400A3479C /* ViewController.swift */,
 				92C60C7A1EC7B33400A3479C /* Main.storyboard */,
@@ -207,6 +220,11 @@
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = C7H5VU6UVJ;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 					92C60C861EC7B33400A3479C = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -275,6 +293,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				92C60C791EC7B33400A3479C /* ViewController.swift in Sources */,
+				92A024731EC8B71500BD3404 /* LoginInViews.swift in Sources */,
 				92C60C771EC7B33400A3479C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -425,6 +444,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Brews/Brews.entitlements;
 				DEVELOPMENT_TEAM = C7H5VU6UVJ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -436,6 +456,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = FLEC.Brews;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -443,6 +464,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Brews/Brews.entitlements;
 				DEVELOPMENT_TEAM = C7H5VU6UVJ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -453,6 +475,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = FLEC.Brews;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -533,6 +556,7 @@
 				92C60C9D1EC7B33400A3479C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		92C60C9E1EC7B33400A3479C /* Build configuration list for PBXNativeTarget "BrewsTests" */ = {
 			isa = XCConfigurationList;
@@ -541,6 +565,7 @@
 				92C60CA01EC7B33400A3479C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		92C60CA11EC7B33400A3479C /* Build configuration list for PBXNativeTarget "BrewsUITests" */ = {
 			isa = XCConfigurationList;
@@ -549,6 +574,7 @@
 				92C60CA31EC7B33400A3479C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
