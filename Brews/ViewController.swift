@@ -8,39 +8,30 @@
 
 import UIKit
 import FBSDKLoginKit
+import GoogleSignIn
 
 
 
-class ViewController: UIViewController, FBSDKLoginButtonDelegate {
+class ViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignInUIDelegate {
 
-   
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        
+        setUpFaceBookButtons()
+        setUpGoogleButtons()
     
+          GIDSignIn.sharedInstance().uiDelegate = self
         
-    let loginButton = FBSDKLoginButton()
-    loginButton.translatesAutoresizingMaskIntoConstraints = false
-    view.addSubview(loginButton)
-    loginButton.frame = CGRect(x: view.frame.width / 2, y: view.frame.height / 2, width: view.frame.width, height: 50)
-    loginButton.delegate = self
-    loginButton.readPermissions = ["email", "public_profile"]
-    
-        
-        let horizontalConstraint = loginButton.centerXAnchor.constraint(equalTo: view.centerXAnchor)
-        let verticalConstraint = loginButton.centerYAnchor.constraint(equalTo: view.centerYAnchor)
-        let widthConstraint = loginButton.widthAnchor.constraint(equalToConstant: view.frame.width)
-        let heightConstraint = loginButton.heightAnchor.constraint(equalToConstant: 100)
-        NSLayoutConstraint.activate([horizontalConstraint, verticalConstraint, widthConstraint, heightConstraint])
-        
+
     }
     
     func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
 
         
         showEmailAddress()
+        
         
         
     }
@@ -57,14 +48,38 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
                 print("Failed to start graph request")
                 return
             }
-            
-            
-            
+        
             
         }
         
     }
+    
+    fileprivate func setUpFaceBookButtons() {
+    
+    
+    let loginButton = FBSDKLoginButton()
+    loginButton.translatesAutoresizingMaskIntoConstraints = false
+    view.addSubview(loginButton)
+    loginButton.frame = CGRect(x: view.frame.width / 2, y: view.frame.height / 2, width: view.frame.width, height: 50)
+    loginButton.delegate = self
+    loginButton.readPermissions = ["email", "public_profile"]
+    
+    
+    let horizontalConstraint = loginButton.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+    let verticalConstraint = loginButton.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+    let widthConstraint = loginButton.widthAnchor.constraint(equalToConstant: view.frame.width)
+    let heightConstraint = loginButton.heightAnchor.constraint(equalToConstant: 100)
+    NSLayoutConstraint.activate([horizontalConstraint, verticalConstraint, widthConstraint, heightConstraint])
 
+    }
+    fileprivate func setUpGoogleButtons() {
+        
+        let GoogleButton = GIDSignInButton()
+        GoogleButton.frame = CGRect(x: view.frame.width / 2, y: view.frame.height / 2, width: view.frame.width, height: 50)
+        view.addSubview(GoogleButton)
+        
+        //        GIDSignIn.sharedInstance().delegate = self
+    }
 
 }
 

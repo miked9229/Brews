@@ -8,3 +8,13 @@
 
 import Foundation
 import UIKit
+
+
+class LoginViews: UIView {
+    
+    
+    
+    
+    
+    
+}

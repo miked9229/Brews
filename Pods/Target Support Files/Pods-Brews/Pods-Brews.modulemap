@@ -1,0 +1,6 @@
+framework module Pods_Brews {
+  umbrella header "Pods-Brews-umbrella.h"
+
+  export *
+  module * { export * }
+}
