@@ -9,6 +9,8 @@
 import UIKit
 import FBSDKLoginKit
 import GoogleSignIn
+import Firebase
+
 
 
 
@@ -40,6 +42,23 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignInUIDel
     }
 
     func showEmailAddress() {
+        let accessToken = FBSDKAccessToken.current()
+        
+        guard let accessTokenString = accessToken?.tokenString else { return}
+        
+        let credentials = FIRFacebookAuthProvider.credential(withAccessToken: accessTokenString)
+        
+        FIRAuth.auth()?.signIn(with: credentials, completion: { (user, error) in
+            
+            if error != nil {
+                print("Something went wrong", error ?? "")
+            }
+            
+            print("Sucessfully logged in with users", user ?? "")
+            
+        })
+        
+        
         
         FBSDKGraphRequest(graphPath: "/me", parameters: ["fields": "id, name, email"]).start {(connection, result, err) in
             

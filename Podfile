@@ -8,6 +8,7 @@ target 'Brews' do
   # Pods for Brews
 
   pod ‘Google/SignIn’
+  pod ‘Firebase/Auth’
 
   target 'BrewsTests' do
     inherit! :search_paths
