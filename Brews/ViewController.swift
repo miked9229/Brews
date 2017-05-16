@@ -24,7 +24,7 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignInUIDel
         setUpFaceBookButtons()
         setUpGoogleButtons()
     
-          GIDSignIn.sharedInstance().uiDelegate = self
+   
         
 
     }
@@ -57,7 +57,6 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignInUIDel
             print("Sucessfully logged in with users", user ?? "")
             
         })
-        
         
         
         FBSDKGraphRequest(graphPath: "/me", parameters: ["fields": "id, name, email"]).start {(connection, result, err) in
@@ -97,8 +96,13 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignInUIDel
         GoogleButton.frame = CGRect(x: view.frame.width / 2, y: view.frame.height / 2, width: view.frame.width, height: 50)
         view.addSubview(GoogleButton)
         
-        //        GIDSignIn.sharedInstance().delegate = self
+        
+        GIDSignIn.sharedInstance().uiDelegate = self
+        
     }
 
+
+    
+    
 }
 

@@ -11,6 +11,9 @@ import FBSDKCoreKit
 import FBSDKLoginKit
 import GoogleSignIn
 import FirebaseCore
+import Firebase
+
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
@@ -26,11 +29,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         FIRApp.configure()
         
         GIDSignIn.sharedInstance().clientID = FIRApp.defaultApp()?.options.clientID
+        
+        
+        GIDSignIn.sharedInstance().delegate = self
     
         
-//        FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
-//    
-//        GIDSignIn.sharedInstance().clientID = FIRApp.defaultApp()?.options.clientID
+        FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+
         
         
         return true
@@ -42,10 +47,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
         
         
+       GIDSignIn.sharedInstance().handle(url,
+                                                    sourceApplication: options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String,
+                                                    annotation: options[UIApplicationOpenURLOptionsKey.annotation])
+        
         let handled = FBSDKApplicationDelegate.sharedInstance().application(app, open: url, options: options)
         
-        
         return handled
+  
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
@@ -69,11 +78,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-    
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         
+        guard let idToken = user.authentication.idToken else { return }
+        guard let accessToken = user.authentication.accessToken else { return }
+        
+        print(accessToken)
+        
+        let credentials = FIRGoogleAuthProvider.credential(withIDToken: idToken, accessToken: accessToken)
+        
+        print(credentials)
+        
+        if let err = error {
+            print("Failed to log into Google...", err)
+            
+        } else {
+            print("Sucessfully logged into Google")
+        }
+        FIRAuth.auth()?.signIn(with: credentials, completion: { (user, error) in
+            if let error = error {
+                print("Failed to create a Firebase User with Google Account", error)
+            }
+            
+        })
     }
-
-
 }
 
