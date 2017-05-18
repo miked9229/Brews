@@ -20,21 +20,14 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignInUIDel
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        
         setUpFaceBookButtons()
         setUpGoogleButtons()
-    
-   
-        
 
     }
     
     func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
 
-        
         showEmailAddress()
-        
-        
         
     }
     func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
@@ -58,7 +51,6 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignInUIDel
             
         })
         
-        
         FBSDKGraphRequest(graphPath: "/me", parameters: ["fields": "id, name, email"]).start {(connection, result, err) in
             
             
@@ -67,42 +59,36 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignInUIDel
                 return
             }
         
-            
         }
         
     }
     
     fileprivate func setUpFaceBookButtons() {
     
-    
+     let margins = view.layoutMarginsGuide
     let loginButton = FBSDKLoginButton()
     loginButton.translatesAutoresizingMaskIntoConstraints = false
     view.addSubview(loginButton)
-    loginButton.frame = CGRect(x: view.frame.width / 2, y: view.frame.height / 2, width: view.frame.width, height: 50)
+    loginButton.topAnchor.constraint(equalTo: margins.topAnchor, constant: view.frame.height * 0.75).isActive = true
+    loginButton.leadingAnchor.constraint(equalTo: margins.leadingAnchor).isActive = true
+    loginButton.trailingAnchor.constraint(equalTo: margins.trailingAnchor).isActive = true
+    loginButton.heightAnchor.constraint(equalTo: loginButton.widthAnchor, multiplier: 2.0).isActive = true
     loginButton.delegate = self
     loginButton.readPermissions = ["email", "public_profile"]
-    
-    
-    let horizontalConstraint = loginButton.centerXAnchor.constraint(equalTo: view.centerXAnchor)
-    let verticalConstraint = loginButton.centerYAnchor.constraint(equalTo: view.centerYAnchor)
-    let widthConstraint = loginButton.widthAnchor.constraint(equalToConstant: view.frame.width)
-    let heightConstraint = loginButton.heightAnchor.constraint(equalToConstant: 100)
-    NSLayoutConstraint.activate([horizontalConstraint, verticalConstraint, widthConstraint, heightConstraint])
 
     }
     fileprivate func setUpGoogleButtons() {
         
+        let margins = view.layoutMarginsGuide
         let GoogleButton = GIDSignInButton()
-        GoogleButton.frame = CGRect(x: view.frame.width / 2, y: view.frame.height / 2, width: view.frame.width, height: 50)
+        GoogleButton.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(GoogleButton)
-        
-        
+        GoogleButton.topAnchor.constraint(equalTo: margins.topAnchor, constant: view.frame.height * 0.80).isActive = true
+        GoogleButton.leadingAnchor.constraint(equalTo: margins.leadingAnchor).isActive = true
+        GoogleButton.trailingAnchor.constraint(equalTo: margins.trailingAnchor).isActive = true
+        GoogleButton.heightAnchor.constraint(equalTo: GoogleButton.widthAnchor, multiplier: 2.0).isActive = true
         GIDSignIn.sharedInstance().uiDelegate = self
         
     }
-
-
-    
-    
 }
 

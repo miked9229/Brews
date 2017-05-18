@@ -8,9 +8,10 @@
 
 import Foundation
 import UIKit
+import GoogleSignIn
 
 
-class LoginViews: UIView {
+class ProjectGoogleSignIn:  GIDSignInButton {
     
     
     

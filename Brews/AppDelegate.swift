@@ -30,10 +30,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         
         GIDSignIn.sharedInstance().clientID = FIRApp.defaultApp()?.options.clientID
         
-        
         GIDSignIn.sharedInstance().delegate = self
     
-        
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
 
         
@@ -99,6 +97,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             if let error = error {
                 print("Failed to create a Firebase User with Google Account", error)
             }
+            
             
         })
     }
