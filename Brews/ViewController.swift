@@ -22,12 +22,18 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignInUIDel
         
         setUpFaceBookButtons()
         setUpGoogleButtons()
+        setUpBackGroundImage()
 
     }
     
     func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
 
         showEmailAddress()
+        let controller = storyboard?.instantiateViewController(withIdentifier: "TableViewController") as! TableViewController
+        present(controller, animated: true) {
+            print("Hello")
+        }
+        
         
     }
     func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
@@ -88,6 +94,20 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignInUIDel
         GoogleButton.trailingAnchor.constraint(equalTo: margins.trailingAnchor).isActive = true
         GoogleButton.heightAnchor.constraint(equalTo: GoogleButton.widthAnchor, multiplier: 2.0).isActive = true
         GIDSignIn.sharedInstance().uiDelegate = self
+        
+    }
+    fileprivate func setUpBackGroundImage() {
+        let background = UIImage(named: "BackgroundImage")
+        
+        
+        var imageView : UIImageView!
+        imageView = UIImageView(frame: view.bounds)
+        imageView.contentMode =  .scaleAspectFill
+        imageView.clipsToBounds = true
+        imageView.image = background
+        imageView.center = view.center
+        view.addSubview(imageView)
+        self.view.sendSubview(toBack: imageView)
         
     }
 }
