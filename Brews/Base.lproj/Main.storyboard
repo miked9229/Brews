@@ -40,7 +40,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cFW-mi-arp">
-                                <rect key="frame" x="164" y="193" width="46" height="30"/>
+                                <rect key="frame" x="164" y="237" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="GetData:" destination="Gx3-VZ-fCD" eventType="touchUpInside" id="biv-AV-Luf"/>
@@ -53,10 +53,11 @@
                             <constraint firstItem="cFW-mi-arp" firstAttribute="leading" secondItem="UVU-Ci-0Ta" secondAttribute="leadingMargin" constant="148" id="Inp-K4-eQz"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Kcj-07-ste"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TR4-Kc-4Hn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="810" y="93"/>
+            <point key="canvasLocation" x="1188" y="133"/>
         </scene>
     </scenes>
 </document>

@@ -11,9 +11,6 @@ import FBSDKLoginKit
 import GoogleSignIn
 import Firebase
 
-
-
-
 class ViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignInUIDelegate {
 
     override func viewDidLoad() {
@@ -23,21 +20,24 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignInUIDel
         setUpFaceBookButtons()
         setUpGoogleButtons()
         setUpBackGroundImage()
-
+        setUpTitle()
+        
+        let _ = FIRAuth.auth()?.addStateDidChangeListener { (auth, user) in
+            if user != nil {
+                self.presentNextController()
+                
+            }
+        }
+        
     }
     
     func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
 
         showEmailAddress()
-        let controller = storyboard?.instantiateViewController(withIdentifier: "TableViewController") as! TableViewController
-        present(controller, animated: true) {
-            print("Hello")
-        }
-        
-        
     }
     func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
-        print("Did log out of Facebook...")
+        
+    
     }
 
     func showEmailAddress() {
@@ -59,7 +59,6 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignInUIDel
         
         FBSDKGraphRequest(graphPath: "/me", parameters: ["fields": "id, name, email"]).start {(connection, result, err) in
             
-            
             if err != nil {
                 print("Failed to start graph request")
                 return
@@ -71,16 +70,16 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignInUIDel
     
     fileprivate func setUpFaceBookButtons() {
     
-     let margins = view.layoutMarginsGuide
-    let loginButton = FBSDKLoginButton()
-    loginButton.translatesAutoresizingMaskIntoConstraints = false
-    view.addSubview(loginButton)
-    loginButton.topAnchor.constraint(equalTo: margins.topAnchor, constant: view.frame.height * 0.75).isActive = true
-    loginButton.leadingAnchor.constraint(equalTo: margins.leadingAnchor).isActive = true
-    loginButton.trailingAnchor.constraint(equalTo: margins.trailingAnchor).isActive = true
-    loginButton.heightAnchor.constraint(equalTo: loginButton.widthAnchor, multiplier: 2.0).isActive = true
-    loginButton.delegate = self
-    loginButton.readPermissions = ["email", "public_profile"]
+        let margins = view.layoutMarginsGuide
+        let loginButton = FBSDKLoginButton()
+        loginButton.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(loginButton)
+        loginButton.topAnchor.constraint(equalTo: margins.topAnchor, constant: view.frame.height * 0.75).isActive = true
+        loginButton.leadingAnchor.constraint(equalTo: margins.leadingAnchor).isActive = true
+        loginButton.trailingAnchor.constraint(equalTo: margins.trailingAnchor).isActive = true
+        loginButton.heightAnchor.constraint(equalTo: loginButton.widthAnchor, multiplier: 2.0).isActive = true
+        loginButton.delegate = self
+        loginButton.readPermissions = ["email", "public_profile"]
 
     }
     fileprivate func setUpGoogleButtons() {
@@ -110,5 +109,32 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignInUIDel
         self.view.sendSubview(toBack: imageView)
         
     }
+    fileprivate func setUpTitle() {
+        let margins = view.layoutMarginsGuide
+        let title = UILabel()
+        title.translatesAutoresizingMaskIntoConstraints = false
+        title.text = "Brews"
+        title.font = UIFont(name: "HelveticaNeue-UltraLight", size: 30)
+        view.addSubview(title)
+        title.topAnchor.constraint(equalTo: margins.topAnchor , constant: view.frame.height * 0.10).isActive = true
+        title.leadingAnchor.constraint(equalTo: margins.leadingAnchor).isActive = true
+        title.trailingAnchor.constraint(equalTo: margins.trailingAnchor).isActive = true
+        title.textAlignment = .center
+        title.textColor = UIColor.cyan
+//        title.heightAnchor.constraint(equalTo: title.widthAnchor, multiplier: 2.0).isActive = true
+    
+    }
+    fileprivate func presentNextController() {
+       
+        print("Trying to present this view controller")
+        let controller = storyboard?.instantiateViewController(withIdentifier: "TableViewController") as! TableViewController
+        present(controller, animated: true) {
+            print("Hello")
+        }
+
+        
+    }
+    
+    
 }
 
