@@ -10,9 +10,12 @@ import UIKit
 import FBSDKLoginKit
 import GoogleSignIn
 import Firebase
+import FirebaseDatabase
 
-class ViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignInUIDelegate {
 
+class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignInUIDelegate {
+    var currentUser: String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -24,7 +27,10 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignInUIDel
         
         let _ = FIRAuth.auth()?.addStateDidChangeListener { (auth, user) in
             if user != nil {
+                self.currentUser = user?.displayName
+                self.configureDatabase()
                 self.presentNextController()
+                
                 
             }
         }
@@ -121,7 +127,6 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignInUIDel
         title.trailingAnchor.constraint(equalTo: margins.trailingAnchor).isActive = true
         title.textAlignment = .center
         title.textColor = UIColor.cyan
-//        title.heightAnchor.constraint(equalTo: title.widthAnchor, multiplier: 2.0).isActive = true
     
     }
     fileprivate func presentNextController() {
@@ -134,6 +139,17 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignInUIDel
 
         
     }
+    public func configureDatabase() {
+        let practicedict = ["Dog": "Bill", "User": currentUser]
+        
+        let ref = FIRDatabase.database().reference()
+        ref.child("messages").childByAutoId().setValue(practicedict)
+ 
+        
+    }
+    
+    
+// MARK: Configure UI Elements
     
     
 }

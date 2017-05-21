@@ -9,6 +9,8 @@ target 'Brews' do
 
   pod ‘Google/SignIn’
   pod ‘Firebase/Auth’
+  pod ‘Firebase/Storage’
+  pod ‘Firebase/Database’
 
   target 'BrewsTests' do
     inherit! :search_paths
