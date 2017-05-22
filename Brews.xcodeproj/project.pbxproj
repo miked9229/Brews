@@ -13,7 +13,7 @@
 		92A024C21ECAA44700BD3404 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 92A024C11ECAA44700BD3404 /* GoogleService-Info.plist */; };
 		92A024C41ECE876C00BD3404 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A024C31ECE876C00BD3404 /* TableViewController.swift */; };
 		92C60C771EC7B33400A3479C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C60C761EC7B33400A3479C /* AppDelegate.swift */; };
-		92C60C791EC7B33400A3479C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C60C781EC7B33400A3479C /* ViewController.swift */; };
+		92C60C791EC7B33400A3479C /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C60C781EC7B33400A3479C /* LogInViewController.swift */; };
 		92C60C7C1EC7B33400A3479C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92C60C7A1EC7B33400A3479C /* Main.storyboard */; };
 		92C60C7E1EC7B33400A3479C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92C60C7D1EC7B33400A3479C /* Assets.xcassets */; };
 		92C60C811EC7B33400A3479C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92C60C7F1EC7B33400A3479C /* LaunchScreen.storyboard */; };
@@ -54,7 +54,7 @@
 		92A024C31ECE876C00BD3404 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		92C60C731EC7B33400A3479C /* Brews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Brews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92C60C761EC7B33400A3479C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		92C60C781EC7B33400A3479C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		92C60C781EC7B33400A3479C /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		92C60C7B1EC7B33400A3479C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		92C60C7D1EC7B33400A3479C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		92C60C801EC7B33400A3479C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -153,7 +153,7 @@
 				92A024711EC8B6E500BD3404 /* Views */,
 				92A024701EC7C40D00BD3404 /* Brews.entitlements */,
 				92C60C761EC7B33400A3479C /* AppDelegate.swift */,
-				92C60C781EC7B33400A3479C /* ViewController.swift */,
+				92C60C781EC7B33400A3479C /* LogInViewController.swift */,
 				92A024C31ECE876C00BD3404 /* TableViewController.swift */,
 				92C60C7A1EC7B33400A3479C /* Main.storyboard */,
 				92C60C7D1EC7B33400A3479C /* Assets.xcassets */,
@@ -489,7 +489,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				92C60C791EC7B33400A3479C /* ViewController.swift in Sources */,
+				92C60C791EC7B33400A3479C /* LogInViewController.swift in Sources */,
 				92A024731EC8B71500BD3404 /* LoginInViews.swift in Sources */,
 				92C60C771EC7B33400A3479C /* AppDelegate.swift in Sources */,
 				92A024C41ECE876C00BD3404 /* TableViewController.swift in Sources */,

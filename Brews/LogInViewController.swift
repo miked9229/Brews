@@ -23,7 +23,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignIn
         setUpFaceBookButtons()
         setUpGoogleButtons()
         setUpBackGroundImage()
-        setUpTitle()
+//        setUpTitle()
         
         let _ = FIRAuth.auth()?.addStateDidChangeListener { (auth, user) in
             if user != nil {
