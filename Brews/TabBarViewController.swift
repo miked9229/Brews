@@ -9,8 +9,7 @@
 import Foundation
 import UIKit
 
-class TableViewController: UIViewController {
-    
+class TabBarViewController: UITabBarController {
     
 
     @IBAction func GetData(_ sender: Any) {
