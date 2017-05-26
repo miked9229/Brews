@@ -31,7 +31,7 @@
             </objects>
             <point key="canvasLocation" x="-1201" y="125"/>
         </scene>
-        <!--Item 2-->
+        <!--View Controller-->
         <scene sceneID="snn-WV-8Yv">
             <objects>
                 <viewController id="aMP-GQ-yeW" sceneMemberID="viewController">
@@ -44,13 +44,32 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="KNe-cY-q4N"/>
+                    <tabBarItem key="tabBarItem" systemItem="favorites" id="KNe-cY-q4N"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v0G-jB-0Zw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2462" y="531"/>
         </scene>
-        <!--Item 1-->
+        <!--Random-->
+        <scene sceneID="KfR-Se-p1y">
+            <objects>
+                <viewController id="av9-na-oZT" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5Ln-lm-tyy"/>
+                        <viewControllerLayoutGuide type="bottom" id="2c3-Vs-n3M"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7cc-Sf-0Wu">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Random" image="Beer" id="02e-ef-61I"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Y1k-dN-hU7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2492" y="1692"/>
+        </scene>
+        <!--View Controller-->
         <scene sceneID="HkB-i2-Fg9">
             <objects>
                 <viewController id="ZAb-NX-ZEm" sceneMemberID="viewController">
@@ -63,7 +82,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="AxU-mc-LZ8"/>
+                    <tabBarItem key="tabBarItem" systemItem="search" id="lqH-Pz-VdT"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BE3-0J-5IE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -98,11 +117,15 @@
                     <connections>
                         <segue destination="ZAb-NX-ZEm" kind="relationship" relationship="viewControllers" id="9ih-Qs-gML"/>
                         <segue destination="aMP-GQ-yeW" kind="relationship" relationship="viewControllers" id="WAA-9n-XAM"/>
+                        <segue destination="av9-na-oZT" kind="relationship" relationship="viewControllers" id="K4v-Gu-AYp"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eoX-Pi-8TK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="858" y="125"/>
+            <point key="canvasLocation" x="839" y="125"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Beer" width="48" height="32"/>
+    </resources>
 </document>
