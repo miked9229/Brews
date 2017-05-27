@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import Firebase
+import FirebaseDatabase
 
 class BreweryDBCLient {
     
@@ -15,7 +17,7 @@ class BreweryDBCLient {
         
         
         let session = URLSession.shared
-        let urlString = "https://api.brewerydb.com/v2/ingredient/434?key=7d64d2655fe3c2f90b82dae866dea77b&format=json"
+        let urlString = "https://api.brewerydb.com/v2/beers?key=7d64d2655fe3c2f90b82dae866dea77b&format=json"
         
         let url = URL(string: urlString)!
         let urlRequest = URLRequest(url: url)
@@ -40,7 +42,7 @@ class BreweryDBCLient {
                 
             }
             
-            var parsedResult: [String:AnyObject]! = nil
+            var parsedResult: [String:AnyObject]? = nil
             do {
                 parsedResult = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: AnyObject]
             } catch {
@@ -48,13 +50,29 @@ class BreweryDBCLient {
                 
             }
             
-            print(parsedResult)
+            guard let beerData = parsedResult?["data"] as? [[String:AnyObject]] else { return }
             
             
-            
+            self.loadToDataToFirebase(beersInformationArray: beerData)
         }
         
         task.resume()
+        
+    }
+    
+// MARK: Unwrapping Beer JSON Data
+    
+    fileprivate func unwrapBeerData(beersInformationArray: [[String: AnyObject]]) -> [String] {
+    /* This is a function that takes in an array of dictionaries of beer data and returns single Array Of Data */
+    
+        return []
+        
+    }
+    
+    fileprivate func loadToDataToFirebase(beersInformationArray:[[String: AnyObject]]) {
+        print("Method called")
+        let ref = FIRDatabase.database().reference()
+        ref.child("Beers").childByAutoId().setValue(beersInformationArray)
         
     }
 

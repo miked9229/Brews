@@ -10,6 +10,11 @@ import Foundation
 import UIKit
 
 class TabBarViewController: UITabBarController {
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+         BreweryDBCLient().getForBeerData()
+        print("Method called")
+    }
     
         
     

@@ -145,7 +145,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignIn
         let practicedict = ["Dog": "Bill", "User": currentUser]
         
         let ref = FIRDatabase.database().reference()
-        ref.child("messages").childByAutoId().setValue(practicedict)
+        ref.child("Beers").childByAutoId().setValue(practicedict)
         
         
     }
@@ -156,6 +156,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignIn
             if user != nil {
                 // 3
                 self.performSegue(withIdentifier: "loginToList", sender: nil)
+               
             }
         }
   
