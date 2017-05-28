@@ -70,10 +70,10 @@
             </objects>
             <point key="canvasLocation" x="2492" y="1692"/>
         </scene>
-        <!--View Controller-->
+        <!--Search View Controller-->
         <scene sceneID="HkB-i2-Fg9">
             <objects>
-                <viewController id="ZAb-NX-ZEm" sceneMemberID="viewController">
+                <viewController id="ZAb-NX-ZEm" customClass="SearchViewController" customModule="Brews" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Xqh-gR-Vxs"/>
                         <viewControllerLayoutGuide type="bottom" id="Unx-h4-yRj"/>
@@ -86,15 +86,40 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="44"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9QH-Up-DlL">
+                                <rect key="frame" x="0.0" y="108" width="375" height="510"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="beerIdentifier" id="5tN-7M-p2m">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5tN-7M-p2m" id="XzG-K0-oyy">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="ZAb-NX-ZEm" id="jZ0-fI-Lz2"/>
+                                    <outlet property="delegate" destination="ZAb-NX-ZEm" id="x9i-V1-rTO"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="9QH-Up-DlL" secondAttribute="trailing" constant="-16" id="46t-yr-uqO"/>
                             <constraint firstItem="hUk-22-ehu" firstAttribute="leading" secondItem="rCd-HP-pVu" secondAttribute="leadingMargin" constant="-16" id="8H7-WD-bXo"/>
+                            <constraint firstItem="Unx-h4-yRj" firstAttribute="top" secondItem="9QH-Up-DlL" secondAttribute="bottom" id="ao1-e1-B55"/>
                             <constraint firstItem="hUk-22-ehu" firstAttribute="top" secondItem="Xqh-gR-Vxs" secondAttribute="bottom" id="ha1-Qp-rA0"/>
                             <constraint firstAttribute="trailingMargin" secondItem="hUk-22-ehu" secondAttribute="trailing" constant="-16" id="noa-wb-qzP"/>
+                            <constraint firstItem="9QH-Up-DlL" firstAttribute="top" secondItem="hUk-22-ehu" secondAttribute="bottom" id="sNw-TI-K8A"/>
+                            <constraint firstItem="9QH-Up-DlL" firstAttribute="leading" secondItem="rCd-HP-pVu" secondAttribute="leadingMargin" constant="-16" id="tp7-OQ-UQD"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="search" id="lqH-Pz-VdT"/>
+                    <connections>
+                        <outlet property="beerTable" destination="9QH-Up-DlL" id="hMT-Oe-LA8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BE3-0J-5IE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -106,7 +131,7 @@
                 <navigationController id="Xa2-pt-YWr" sceneMemberID="viewController">
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="4eq-tG-4fe">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="4eq-tG-4fe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

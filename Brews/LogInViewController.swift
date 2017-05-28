@@ -30,6 +30,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignIn
         setUpGoogleButtons()
         setUpBackGroundImage()
         listenForUserAuthentication()
+        BreweryDBCLient().getForBeerData()
 
         
 

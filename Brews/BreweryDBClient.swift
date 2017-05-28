@@ -22,8 +22,7 @@ class BreweryDBCLient {
         let url = URL(string: urlString)!
         let urlRequest = URLRequest(url: url)
         
-        print(urlRequest)
-        
+
         let task = session.dataTask(with: urlRequest) {(data, response, error) in
             
             guard (error == nil) else {
@@ -62,15 +61,7 @@ class BreweryDBCLient {
     
 // MARK: Unwrapping Beer JSON Data
     
-    fileprivate func unwrapBeerData(beersInformationArray: [[String: AnyObject]]) -> [String] {
-    /* This is a function that takes in an array of dictionaries of beer data and returns single Array Of Data */
-    
-        return []
-        
-    }
-    
     fileprivate func loadToDataToFirebase(beersInformationArray:[[String: AnyObject]]) {
-        print("Method called")
         let ref = FIRDatabase.database().reference()
         ref.child("Beers").childByAutoId().setValue(beersInformationArray)
         
