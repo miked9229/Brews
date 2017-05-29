@@ -119,6 +119,7 @@
                     <tabBarItem key="tabBarItem" systemItem="search" id="lqH-Pz-VdT"/>
                     <connections>
                         <outlet property="beerTable" destination="9QH-Up-DlL" id="hMT-Oe-LA8"/>
+                        <outlet property="searchBar" destination="hUk-22-ehu" id="yCf-M6-1SH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BE3-0J-5IE" userLabel="First Responder" sceneMemberID="firstResponder"/>

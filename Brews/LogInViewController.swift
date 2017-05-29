@@ -142,14 +142,6 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignIn
         
     }
     
-    public func configureDatabase() {
-        let practicedict = ["Dog": "Bill", "User": currentUser]
-        
-        let ref = FIRDatabase.database().reference()
-        ref.child("Beers").childByAutoId().setValue(practicedict)
-        
-        
-    }
     
     public func listenForUserAuthentication() {
         

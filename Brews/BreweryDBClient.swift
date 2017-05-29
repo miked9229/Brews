@@ -63,6 +63,8 @@ class BreweryDBCLient {
     
     fileprivate func loadToDataToFirebase(beersInformationArray:[[String: AnyObject]]) {
         let ref = FIRDatabase.database().reference()
+        ref.database.reference()
+        ref.child("Beers").setValue(nil)
         ref.child("Beers").childByAutoId().setValue(beersInformationArray)
         
     }
