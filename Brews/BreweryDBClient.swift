@@ -51,7 +51,6 @@ class BreweryDBCLient {
             
             guard let beerData = parsedResult?["data"] as? [[String:AnyObject]] else { return }
             
-            
             self.loadToDataToFirebase(beersInformationArray: beerData)
         }
         

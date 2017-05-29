@@ -18,6 +18,7 @@
 		92A024C21ECAA44700BD3404 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 92A024C11ECAA44700BD3404 /* GoogleService-Info.plist */; };
 		92A024C41ECE876C00BD3404 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A024C31ECE876C00BD3404 /* TabBarViewController.swift */; };
 		92C39F581EDB2D78007BF524 /* Beer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C39F571EDB2D78007BF524 /* Beer.swift */; };
+		92C39F5A1EDC8128007BF524 /* SelectedBeerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C39F591EDC8128007BF524 /* SelectedBeerViewController.swift */; };
 		92C60C771EC7B33400A3479C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C60C761EC7B33400A3479C /* AppDelegate.swift */; };
 		92C60C791EC7B33400A3479C /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C60C781EC7B33400A3479C /* LogInViewController.swift */; };
 		92C60C7C1EC7B33400A3479C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92C60C7A1EC7B33400A3479C /* Main.storyboard */; };
@@ -64,6 +65,7 @@
 		92A024C11ECAA44700BD3404 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		92A024C31ECE876C00BD3404 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		92C39F571EDB2D78007BF524 /* Beer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Beer.swift; sourceTree = "<group>"; };
+		92C39F591EDC8128007BF524 /* SelectedBeerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectedBeerViewController.swift; sourceTree = "<group>"; };
 		92C60C731EC7B33400A3479C /* Brews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Brews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92C60C761EC7B33400A3479C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		92C60C781EC7B33400A3479C /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 				92219B8E1ED9D12F001C3AC1 /* SearchViewController.swift */,
 				92219B901ED9D16C001C3AC1 /* FavoritesViewController.swift */,
 				92219B921ED9D1AC001C3AC1 /* RandomBeerViewController.swift */,
+				92C39F591EDC8128007BF524 /* SelectedBeerViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -544,6 +547,7 @@
 				92C60C791EC7B33400A3479C /* LogInViewController.swift in Sources */,
 				92219B911ED9D16C001C3AC1 /* FavoritesViewController.swift in Sources */,
 				92A024731EC8B71500BD3404 /* LoginInViews.swift in Sources */,
+				92C39F5A1EDC8128007BF524 /* SelectedBeerViewController.swift in Sources */,
 				922672301ED51E0100E404E9 /* NavigationController.swift in Sources */,
 				92C60C771EC7B33400A3479C /* AppDelegate.swift in Sources */,
 				92C39F581EDB2D78007BF524 /* Beer.swift in Sources */,

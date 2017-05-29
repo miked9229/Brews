@@ -17,12 +17,6 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignIn
     var currentUser: String!
     var checkIfUserIsLoggedIn = false
     
-    // Add a variable to NSUserDefaults IsLoggedIn
-    // Check if the user has already logged in sucessfully
-    // If the user has not logged in before, update the variable if the user logs in sucessfully
-    // Figure out case where token has expired.
-
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -32,8 +26,6 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignIn
         listenForUserAuthentication()
         BreweryDBCLient().getForBeerData()
 
-        
-
     }
     
 
@@ -42,7 +34,6 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignIn
     }
     func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
         
-    
     }
 
     

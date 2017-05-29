@@ -29,6 +29,7 @@ class SearchViewController: UIViewController {
         super.viewWillAppear(animated)
         
         self.searchBar.delegate = self
+        navigationItem.title = "Choose a Beer!"
         searchBar.returnKeyType = .done
         
        
@@ -75,7 +76,6 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         
         let cell = beerTable.dequeueReusableCell(withIdentifier: beerIdentifier, for: indexPath)
         
-        
         if isSearching {
             
             let beerSnapshot = filteredData[indexPath.row]
@@ -91,7 +91,33 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         
         return cell
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        var selectedBeer: FIRDataSnapshot!
+        
+        
+        
+        if isSearching {
+            tableView.deselectRow(at: indexPath, animated: true)
+            selectedBeer = filteredData[indexPath.row]
+            transitionToSelectedBeerViewController(beer: selectedBeer)
+        } else {
+            tableView.deselectRow(at: indexPath, animated: true)
+            selectedBeer = beers[indexPath.row]
+            transitionToSelectedBeerViewController(beer: selectedBeer)
+        }
+        
+    }
     
+    func transitionToSelectedBeerViewController(beer: FIRDataSnapshot) {
+        let vc = storyboard?.instantiateViewController(withIdentifier: "SelectedBeerViewController") as? SelectedBeerViewController
+        
+        vc?.selectedBeer = beer
+        
+        navigationController?.pushViewController(vc!, animated: true)
+        
+    }
+    
+
 
 }
 // MARK: SearchViewController: UISearchBarDelegate
