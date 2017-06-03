@@ -10,6 +10,7 @@ target 'Brews' do
   pod ‘Google/SignIn’
   pod ‘Firebase/Auth’
   pod ‘Firebase/Storage’
+  pod ‘Firebase/Core’
   pod ‘Firebase/Database’
 
   target 'BrewsTests' do

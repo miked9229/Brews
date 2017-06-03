@@ -26,7 +26,7 @@ class BreweryDBCLient {
         let task = session.dataTask(with: urlRequest) {(data, response, error) in
             
             guard (error == nil) else {
-                print("There was an error with your request: \(error)")
+                print("There was an error with your request: \(String(describing: error))")
                 return
                 
             }

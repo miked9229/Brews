@@ -24,7 +24,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignIn
         setUpGoogleButtons()
         setUpBackGroundImage()
         listenForUserAuthentication()
-        BreweryDBCLient().getForBeerData()
+  
 
     }
     
@@ -97,6 +97,8 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignIn
 // MARK: View Transition Methods
     func presentNextController() {
         
+        print("Transition methods")
+        
         let controller = storyboard?.instantiateViewController(withIdentifier: "TabBarViewController") as! TabBarViewController
         
         navigationController?.pushViewController(controller, animated: true)
@@ -139,10 +141,11 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignIn
         FIRAuth.auth()!.addStateDidChangeListener() { auth, user in
             if user != nil {
                 // 3
-                self.performSegue(withIdentifier: "loginToList", sender: nil)
-               
+               self.performSegue(withIdentifier: "loginToList", sender: nil)
+               self.currentUser = user?.email
+
             }
         }
-  
     }
+
 }

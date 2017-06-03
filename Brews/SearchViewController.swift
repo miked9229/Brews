@@ -15,6 +15,7 @@ class SearchViewController: UIViewController {
     
     
     // MARK: Properties
+    var user: String?
     var ref: FIRDatabaseReference!
     var beers: [FIRDataSnapshot]! = []
     fileprivate var _refHandle: FIRDatabaseHandle!
@@ -26,13 +27,12 @@ class SearchViewController: UIViewController {
     
     
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
         
+        super.viewWillAppear(animated)
         self.searchBar.delegate = self
         navigationItem.title = "Choose a Beer!"
         searchBar.returnKeyType = .done
         
-       
     }
     
     override func viewDidLoad() {
@@ -46,6 +46,7 @@ class SearchViewController: UIViewController {
         ref = FIRDatabase.database().reference()
        _refHandle = ref.child("Beers").observe(.childAdded) { (snapshot: FIRDataSnapshot) in
         
+        self.beers = []
         for each in snapshot.children {
             self.beers.append((each as? FIRDataSnapshot)!)
             

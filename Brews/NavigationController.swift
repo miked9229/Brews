@@ -10,5 +10,16 @@ import Foundation
 import UIKit
 
 class NavigationController: UINavigationController, UINavigationControllerDelegate {
+    var user: String!
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+   
+
+    }
+    override func viewDidLoad() {
+    
+    
+    }
     
 }
