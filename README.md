@@ -10,9 +10,23 @@ These instructions will get you a copy of the project up and running on your loc
 
 What things you need to install the software and how to install them
 
+Install CocoaPods if you don't already have it
+
 ```
-Give examples
+sudo gem install cocoapods
 ```
+
+Go ahead and clone the project
+
+```
+git clone https://github.com/miked9229/Brews.git
+```
+
+Open the project in your terminal
+```
+cd Brews
+```
+
 
 ### Installing
 
