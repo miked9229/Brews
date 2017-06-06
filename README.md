@@ -16,21 +16,8 @@ Install CocoaPods if you don't already have it
 sudo gem install cocoapods
 ```
 
-Go ahead and clone the project
-
-```
-git clone https://github.com/miked9229/Brews.git
-```
-
-Open the project in your terminal
-```
-cd Brews
-```
-
-
 ### Installing
 
-A step by step series of examples that tell you have to get a development env running
 
 Say what the step will be
 
