@@ -1,6 +1,6 @@
 # Brews
 
-Brews is my final project for the iOS Developer Nanodegree Plus Program. This iOS application uses the BreweryDB API to return information about individual beers that users have added to the REST API. Users must authenticate through their Google or Facebook Log in credentials. Each user is able to store beers that sound interesting to them. The user can then access his or her data from any iOS powered device.
+Brews is my final project for the iOS Developer Nanodegree Plus Program. This iOS application uses the BreweryDB API to return information about individual beers that users have added to the REST API. Users must authenticate through their Google or Facebook Login credentials which are stored in Firebase. Each user is able to store beers that sound interesting to them. The user can then access his or her data from any iOS powered device.
 
 ## Getting Started
 
