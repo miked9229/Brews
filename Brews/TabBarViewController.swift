@@ -8,14 +8,18 @@
 
 import Foundation
 import UIKit
+import FirebaseDatabase
+
 
 class TabBarViewController: UITabBarController {
     var user: String!
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-      
+     
         BreweryDBCLient().getForBeerData()
+        
+        
         
     }
 

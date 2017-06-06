@@ -18,6 +18,9 @@ class SelectedBeerViewController: UIViewController {
     
     // MARK: Properties
     var selectedBeer: FIRDataSnapshot!
+    var isMatch = false
+    var beerArray = [FIRDataSnapshot]()
+    var matchBeerArray = [String]()
     var currentUser: String!
     @IBOutlet weak var beerName: UILabel!
     @IBOutlet weak var beerImage: UIImageView!
@@ -30,8 +33,9 @@ class SelectedBeerViewController: UIViewController {
         super.viewWillAppear(animated)
         setUpBeer()
         downloadImage()
-//       disableFavoritesButton()
-        listenForUserAuthentication()
+       listenForUserAuthentication()
+       disableFavoritesButton()
+    
        
         
     }
@@ -53,7 +57,8 @@ class SelectedBeerViewController: UIViewController {
     }
     
     fileprivate func disableFavoritesButton() {
-        UserFavoritesBar.isEnabled = false
+       checkIfBeerAlreadyOnList()
+
     
     }
     fileprivate func downloadImage() {
@@ -88,29 +93,42 @@ class SelectedBeerViewController: UIViewController {
     
     @IBAction func addToFavorites(_ sender: Any) {
         
-       var userDict = [String: [String: Any]]()
+       var userDict = [String : [String: Any]]()
        let ref = FIRDatabase.database().reference()
        let selectedBeerDict = selectedBeer.value as? [String: Any]
        let userid = FIRAuth.auth()!.currentUser?.uid
+ 
         
-       let beerName = self.beerName.text!
-        
-        userDict[beerName] = selectedBeerDict
-        
-        print(userid)
+       userDict["beer"] = selectedBeerDict!
         
        ref.child("users").child("users/individualusers/").child(userid!).childByAutoId().updateChildValues(userDict)
         
-        
-    
-        
-        
-        
-      
+       navigationController?.popToRootViewController(animated: true)
         
     }
-    
-    
-    
-    
+    fileprivate func checkIfBeerAlreadyOnList()   {
+        let ref = FIRDatabase.database().reference()
+        let userid = FIRAuth.auth()!.currentUser?.uid
+        ref.child("users/users/individualusers").child(userid!).observe(.value) { (snapshot: FIRDataSnapshot) in
+            for each in snapshot.children {
+                self.beerArray.append(each as! FIRDataSnapshot)
+              
+            }
+            for each in self.beerArray {
+                var snap = each.value as? [String: AnyObject]
+                var beer = snap?["beer"] as? [String:AnyObject]
+                let name = beer?["name"] as? String
+                if let name = name {
+                    if name == self.beerName.text {
+                        self.UserFavoritesBar.isEnabled = false
+                        self.navigationController?.navigationBar.topItem?.title = "This beer is on your favorite list"
+                        
+                     
+                    }
+                }
+                
+            }
+        }
+    }
+
 }

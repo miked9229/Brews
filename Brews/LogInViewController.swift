@@ -15,7 +15,7 @@ import FirebaseDatabase
 
 class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignInUIDelegate, UINavigationControllerDelegate {
     var currentUser: String!
-    var checkIfUserIsLoggedIn = false
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -142,7 +142,6 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignIn
             if user != nil {
                 // 3
                self.performSegue(withIdentifier: "loginToList", sender: nil)
-               self.currentUser = user?.email
 
             }
         }

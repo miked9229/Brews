@@ -165,7 +165,7 @@
         <!--Random-->
         <scene sceneID="KfR-Se-p1y">
             <objects>
-                <viewController id="av9-na-oZT" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RandomBeerViewController" id="av9-na-oZT" customClass="RandomBeerViewController" customModule="Brews" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5Ln-lm-tyy"/>
                         <viewControllerLayoutGuide type="bottom" id="2c3-Vs-n3M"/>
@@ -173,13 +173,31 @@
                     <view key="view" contentMode="scaleToFill" id="7cc-Sf-0Wu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="64R-gC-pw6">
+                                <rect key="frame" x="61" y="258" width="253" height="151"/>
+                                <color key="backgroundColor" red="1" green="0.47326453360846343" blue="0.19676630523194727" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Choose A Random Beer!">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="chooseARandomBeer:" destination="av9-na-oZT" eventType="touchUpInside" id="FnG-T1-uDS"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="64R-gC-pw6" firstAttribute="top" secondItem="5Ln-lm-tyy" secondAttribute="bottom" constant="194" id="24R-Co-44c"/>
+                            <constraint firstItem="2c3-Vs-n3M" firstAttribute="top" secondItem="64R-gC-pw6" secondAttribute="bottom" constant="209" id="CQN-Qp-CUg"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="64R-gC-pw6" secondAttribute="trailing" constant="45" id="MM7-Sh-ddk"/>
+                            <constraint firstItem="64R-gC-pw6" firstAttribute="leading" secondItem="7cc-Sf-0Wu" secondAttribute="leadingMargin" constant="45" id="f5l-wC-ORn"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Random" image="Beer" id="02e-ef-61I"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y1k-dN-hU7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2492" y="1692"/>
+            <point key="canvasLocation" x="2490.4000000000001" y="1690.704647676162"/>
         </scene>
         <!--Search View Controller-->
         <scene sceneID="HkB-i2-Fg9">
