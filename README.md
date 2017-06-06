@@ -8,8 +8,6 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
-
 Install CocoaPods if you don't already have it
 
 ```
@@ -19,17 +17,24 @@ sudo gem install cocoapods
 ### Installing
 
 
-Say what the step will be
+Go ahead and clone the project
 
 ```
-Give the example
+git clone https://github.com/miked9229/Brews.git
 ```
 
-And repeat
+Open the project in your terminal
 
 ```
-until finished
+cd Brews
 ```
+
+Open the workspace file
+```
+open Brews.xcworkspace
+```
+
+
 
 End with an example of getting some data out of the system or using it for a little demo
 
