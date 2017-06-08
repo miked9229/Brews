@@ -13,7 +13,7 @@ import FirebaseDatabase
 class BreweryDBCLient {
     
     
-    public func getForBeerData() {
+    public func getForBeerData(_ completionHandler: @escaping(_ imageData: [String:AnyObject]? , _ error: String ) -> Void) {
         
         
         let session = URLSession.shared
@@ -26,17 +26,19 @@ class BreweryDBCLient {
         let task = session.dataTask(with: urlRequest) {(data, response, error) in
             
             guard (error == nil) else {
+                completionHandler(nil, "There was an error with your network request")
                 print("There was an error with your request: \(String(describing: error))")
                 return
                 
             }
             guard let statusCode = (response as? HTTPURLResponse)?.statusCode, statusCode >= 200 && statusCode <= 299 else {
                 print("Your request returned a status code other than 2xx!")
+                completionHandler(nil, "There was an error requesting data")
                 
                 return
             }
             guard let data = data else {
-                print("No data was returned by the request!")
+                completionHandler(nil, "There was an error requesting data")
                 return
                 
             }
@@ -49,9 +51,8 @@ class BreweryDBCLient {
                 
             }
             
-            guard let beerData = parsedResult?["data"] as? [[String:AnyObject]] else { return }
-            
-            self.loadToDataToFirebase(beersInformationArray: beerData)
+            completionHandler(parsedResult, "")
+
         }
         
         task.resume()
@@ -60,7 +61,7 @@ class BreweryDBCLient {
     
 // MARK: Unwrapping Beer JSON Data
     
-    fileprivate func loadToDataToFirebase(beersInformationArray:[[String: AnyObject]]) {
+    public func loadToDataToFirebase(beersInformationArray:[[String: AnyObject]]) {
         let ref = FIRDatabase.database().reference()
         ref.database.reference()
         ref.child("Beers").setValue(nil)

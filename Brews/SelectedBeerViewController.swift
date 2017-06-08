@@ -27,7 +27,7 @@ class SelectedBeerViewController: UIViewController {
     let storage = FIRStorage.storage()
     @IBOutlet weak var selectedBeerAlcContent: UILabel!
     @IBOutlet weak var UserFavoritesBar: UIButton!
-    
+    let activityIndicator = UIActivityIndicatorView()
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -63,15 +63,19 @@ class SelectedBeerViewController: UIViewController {
     }
     fileprivate func downloadImage() {
         let storageRef = storage.reference()
-         let snapshotValue = selectedBeer.value as? [String: AnyObject]
+        let snapshotValue = selectedBeer.value as? [String: AnyObject]
         let id = snapshotValue?["id"] as! String?
         let beerRef = storageRef.child( id! + ".jpg")
+      
+        setUpActivityIndicator()
+        activityIndicator.startAnimating()
         
         beerRef.data(withMaxSize: 1 * 1024 * 1024) { (data, error) in
             if let error = error {
                print(error)
                return
             }
+            self.activityIndicator.stopAnimating()
             let image = UIImage(data: data!)
             self.beerImage.image = image
             
@@ -129,6 +133,14 @@ class SelectedBeerViewController: UIViewController {
                 
             }
         }
+    }
+
+    fileprivate func setUpActivityIndicator() {
+        activityIndicator.center = view.center
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.activityIndicatorViewStyle = .whiteLarge
+        view.addSubview(activityIndicator)
+    
     }
 
 }

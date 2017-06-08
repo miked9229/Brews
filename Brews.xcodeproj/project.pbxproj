@@ -14,7 +14,6 @@
 		92219B931ED9D1AC001C3AC1 /* RandomBeerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92219B921ED9D1AC001C3AC1 /* RandomBeerViewController.swift */; };
 		92219B971ED9DDEB001C3AC1 /* BreweryDBClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92219B961ED9DDEB001C3AC1 /* BreweryDBClient.swift */; };
 		922672301ED51E0100E404E9 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9226722F1ED51E0100E404E9 /* NavigationController.swift */; };
-		92A024731EC8B71500BD3404 /* LoginInViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A024721EC8B71500BD3404 /* LoginInViews.swift */; };
 		92A024C21ECAA44700BD3404 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 92A024C11ECAA44700BD3404 /* GoogleService-Info.plist */; };
 		92A024C41ECE876C00BD3404 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A024C31ECE876C00BD3404 /* TabBarViewController.swift */; };
 		92C39F581EDB2D78007BF524 /* Beer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C39F571EDB2D78007BF524 /* Beer.swift */; };
@@ -60,7 +59,6 @@
 		92219B961ED9DDEB001C3AC1 /* BreweryDBClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BreweryDBClient.swift; sourceTree = "<group>"; };
 		9226722F1ED51E0100E404E9 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		92A024701EC7C40D00BD3404 /* Brews.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Brews.entitlements; sourceTree = "<group>"; };
-		92A024721EC8B71500BD3404 /* LoginInViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginInViews.swift; sourceTree = "<group>"; };
 		92A024761EC8C23400BD3404 /* Brews-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Brews-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		92A024C11ECAA44700BD3404 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		92A024C31ECE876C00BD3404 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
@@ -169,7 +167,6 @@
 		92A024711EC8B6E500BD3404 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				92A024721EC8B71500BD3404 /* LoginInViews.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -546,7 +543,6 @@
 				92219B971ED9DDEB001C3AC1 /* BreweryDBClient.swift in Sources */,
 				92C60C791EC7B33400A3479C /* LogInViewController.swift in Sources */,
 				92219B911ED9D16C001C3AC1 /* FavoritesViewController.swift in Sources */,
-				92A024731EC8B71500BD3404 /* LoginInViews.swift in Sources */,
 				92C39F5A1EDC8128007BF524 /* SelectedBeerViewController.swift in Sources */,
 				922672301ED51E0100E404E9 /* NavigationController.swift in Sources */,
 				92C60C771EC7B33400A3479C /* AppDelegate.swift in Sources */,

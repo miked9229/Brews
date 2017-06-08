@@ -28,17 +28,16 @@ class SearchViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         
-
-        
         super.viewWillAppear(animated)
-        self.searchBar.delegate = self
+        searchBar.delegate = self
         searchBar.returnKeyType = .done
          self.navigationController?.navigationBar.topItem?.title = "Hi \((FIRAuth.auth()!.currentUser?.displayName)!), select a beer!"
         
     }
     
     override func viewDidLoad() {
-         setupDatabase()
+        super.viewDidLoad()
+        setupDatabase()
   
     }
     
@@ -54,7 +53,6 @@ class SearchViewController: UIViewController {
             self.beers.append((each as? FIRDataSnapshot)!)
             
             }
-        print(self.beers.count)
         self.beerTable.reloadData()
         }
         
