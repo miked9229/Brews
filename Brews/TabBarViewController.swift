@@ -48,9 +48,6 @@ class TabBarViewController: UITabBarController {
         let alert = UIAlertController(title: "", message: errorString, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
         isConnectedToNetwork = false
-        
-        
-        
         present(alert, animated: true, completion: nil)
 
         
