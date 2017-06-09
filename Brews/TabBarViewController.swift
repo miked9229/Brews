@@ -37,9 +37,6 @@ class TabBarViewController: UITabBarController {
                     self.activityIndicator.stopAnimating()
                     self.raiseError(errorString: error)
                     
-                    
-                    
-                    
                 }
             }
             
