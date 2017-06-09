@@ -22,7 +22,7 @@ class TabBarViewController: UITabBarController {
         activityIndicator.hidesWhenStopped = true
         activityIndicator.activityIndicatorViewStyle = .gray
         view.addSubview(activityIndicator)
-        
+        view.alpha = 0.50
         activityIndicator.startAnimating()
      
         if isConnectedToNetwork {
@@ -31,11 +31,14 @@ class TabBarViewController: UITabBarController {
                     guard let beerData = data?["data"] as? [[String:AnyObject]] else { return }
                     BreweryDBCLient().loadToDataToFirebase(beersInformationArray: beerData)
                     self.activityIndicator.stopAnimating()
+                    self.view.alpha = 1.0
+                    
                     
                 }
                 else {
                     self.activityIndicator.stopAnimating()
                     self.raiseError(errorString: error)
+                    self.view.alpha = 1.0
                     
                 }
             }
