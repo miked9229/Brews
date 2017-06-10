@@ -120,8 +120,6 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         
     }
     
-
-
 }
 // MARK: SearchViewController: UISearchBarDelegate
 

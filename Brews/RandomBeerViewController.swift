@@ -46,18 +46,14 @@ class RandomBeerViewController: UIViewController {
                     
             
             }
-                 self.randomNumber = Int(arc4random_uniform(UInt32(self.beersSnapshot.count)) + 1 )
+                self.randomNumber = Int(arc4random_uniform(UInt32(self.beersSnapshot.count)) + 1 )
                
                 if self.beersSnapshot.count != 0 && self.shouldTransition  {
                         self.transitionToSelectedBeerViewController(beer: self.beersSnapshot[self.randomNumber])
                         self.shouldTransition = false
-                    
-                    
-                }
             
+                }
         }
-
-
         
     }
     func transitionToSelectedBeerViewController(beer: FIRDataSnapshot) {
