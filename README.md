@@ -36,7 +36,7 @@ open Brews.xcworkspace
 
 You should then be able to click the play button to run the application in the iOS Simulator
 
-![](http://i.imgur.com/zlWBF4Z.gif)
+![](http://i.imgur.com/LqAlwcy.gif)
 
 
 
