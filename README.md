@@ -46,7 +46,7 @@ You should then be able to click the play button to run the application in the i
 
 ## Contributing
 
-There is no formal contributing documentation at this time. Please submit Pull Requests as normal.
+There is no formal contributing documentation at this time. Please submit pull requests as normal.
 
 
 
@@ -58,7 +58,7 @@ There is no formal contributing documentation at this time. Please submit Pull R
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License - see the [LICENSE.md](https://opensource.org/licenses/MIT) file for details
 
 ## Acknowledgments
 
