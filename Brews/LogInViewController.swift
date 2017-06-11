@@ -16,7 +16,6 @@ import FirebaseDatabase
 class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignInUIDelegate, UINavigationControllerDelegate {
     var currentUser: String!
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         

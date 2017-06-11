@@ -161,13 +161,6 @@
 			name = Client;
 			sourceTree = "<group>";
 		};
-		92A024711EC8B6E500BD3404 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Views;
-			sourceTree = "<group>";
-		};
 		92C39F561EDB2D5D007BF524 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -206,7 +199,6 @@
 				92219B951ED9D5ED001C3AC1 /* Client */,
 				92219B941ED9D1D0001C3AC1 /* HelperFiles */,
 				92219B8D1ED9D10C001C3AC1 /* ViewControllers */,
-				92A024711EC8B6E500BD3404 /* Views */,
 				92C60CA81EC7C11C00A3479C /* Bolts.framework */,
 				92C60CA61EC7BE7200A3479C /* FBSDKCoreKit.framework */,
 				92C60CA41EC7BA2C00A3479C /* FBSDKLoginKit.framework */,

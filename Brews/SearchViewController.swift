@@ -13,7 +13,6 @@ import FirebaseDatabase
 
 class SearchViewController: UIViewController {
     
-    
     // MARK: Properties
     var user: String?
     var ref: FIRDatabaseReference!
@@ -24,7 +23,6 @@ class SearchViewController: UIViewController {
     let beerIdentifier = "beerIdentifier"
     var isSearching = false
     var filteredData = [FIRDataSnapshot]()
-    
     
     override func viewWillAppear(_ animated: Bool) {
         

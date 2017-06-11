@@ -32,8 +32,7 @@ class TabBarViewController: UITabBarController {
                     BreweryDBCLient().loadToDataToFirebase(beersInformationArray: beerData)
                     self.activityIndicator.stopAnimating()
                     self.view.alpha = 1.0
-                    
-                    
+        
                 }
                 else {
                     self.activityIndicator.stopAnimating()
