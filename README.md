@@ -8,7 +8,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-Install CocoaPods if you don't already have it
+Install CocoaPods if you don't already have it. 
 
 ```
 sudo gem install cocoapods
@@ -48,7 +48,7 @@ You should then be able to click the play button to run the application in the i
 
 ## Contributing
 
-There is no formal contributing documentation at this time. Please submit pull requests as normal.
+There is no formal contributing documentation at this time. Please submit pull requests as normal. Documentation to come.
 
 
 
