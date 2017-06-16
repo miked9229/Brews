@@ -11,6 +11,8 @@ import UIKit
 import Firebase
 import FirebaseDatabase
 
+// MARK: SearchViewController: UIViewController
+
 class SearchViewController: UIViewController {
     
     // MARK: Properties

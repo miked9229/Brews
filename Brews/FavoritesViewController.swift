@@ -11,6 +11,8 @@ import UIKit
 import Firebase
 
 
+// MARK: FavoritesViewController: UIViewController
+
 class FavoritesViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     let favoriteIdentifier = "FavoriteCell"

@@ -13,6 +13,8 @@ import Firebase
 import FirebaseDatabase
 
 
+// MARK: LoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignInUIDelegate, UINavigationControllerDelegate
+
 class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignInUIDelegate, UINavigationControllerDelegate {
     var currentUser: String!
 
@@ -95,8 +97,6 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignIn
     }
 // MARK: View Transition Methods
     func presentNextController() {
-        
-        print("Transition methods")
         
         let controller = storyboard?.instantiateViewController(withIdentifier: "TabBarViewController") as! TabBarViewController
         

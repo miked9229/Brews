@@ -11,6 +11,8 @@ import UIKit
 import Firebase
 import FirebaseDatabase
 
+// MARK: RandomBeerViewController: UIViewController
+
 class RandomBeerViewController: UIViewController {
     
     var beersSnapshot = [FIRDataSnapshot]()
