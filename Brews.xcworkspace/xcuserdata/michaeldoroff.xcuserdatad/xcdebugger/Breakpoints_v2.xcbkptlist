@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Brews/SearchViewController.swift"
-            timestampString = "519268234.442526"
+            timestampString = "519349605.652011"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "145"
-            endingLineNumber = "145"
+            startingLineNumber = "187"
+            endingLineNumber = "187"
             landmarkName = "returnArrayOfFiltertedData(searchString:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Brews/SearchViewController.swift"
-            timestampString = "519268234.442526"
+            timestampString = "519349605.652011"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "147"
-            endingLineNumber = "147"
+            startingLineNumber = "189"
+            endingLineNumber = "189"
             landmarkName = "returnArrayOfFiltertedData(searchString:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Brews/SearchViewController.swift"
-            timestampString = "519268234.442526"
+            timestampString = "519349605.652011"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "149"
-            endingLineNumber = "149"
+            startingLineNumber = "191"
+            endingLineNumber = "191"
             landmarkName = "returnArrayOfFiltertedData(searchString:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Brews/SearchViewController.swift"
-            timestampString = "519268234.442526"
+            timestampString = "519349605.652011"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "150"
-            endingLineNumber = "150"
+            startingLineNumber = "192"
+            endingLineNumber = "192"
             landmarkName = "returnArrayOfFiltertedData(searchString:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -90,11 +90,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Brews/SearchViewController.swift"
-            timestampString = "519268234.442526"
+            timestampString = "519349605.652011"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "148"
-            endingLineNumber = "148"
+            startingLineNumber = "190"
+            endingLineNumber = "190"
             landmarkName = "returnArrayOfFiltertedData(searchString:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -106,11 +106,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Brews/SearchViewController.swift"
-            timestampString = "519268234.442526"
+            timestampString = "519349605.652011"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "115"
-            endingLineNumber = "115"
+            startingLineNumber = "157"
+            endingLineNumber = "157"
             landmarkName = "transitionToSelectedBeerViewController(beer:)"
             landmarkType = "7">
          </BreakpointContent>

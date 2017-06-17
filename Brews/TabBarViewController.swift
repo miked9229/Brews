@@ -22,33 +22,33 @@ class TabBarViewController: UITabBarController {
 
      
 // Need to implemenet pull to refresh data
-        if !alreadyGotInformation {
-           
-            activityIndicator.center = view.center
-            activityIndicator.hidesWhenStopped = true
-            activityIndicator.activityIndicatorViewStyle = .gray
-            view.addSubview(activityIndicator)
-            view.alpha = 0.50
-            activityIndicator.startAnimating()
-            BreweryDBCLient().getForBeerData() { (data, error) in
-                if error == "" {
-                    guard let beerData = data?["data"] as? [[String:AnyObject]] else { return }
-                    BreweryDBCLient().loadToDataToFirebase(beersInformationArray: beerData)
-                    self.activityIndicator.stopAnimating()
-                    self.view.alpha = 1.0
-                    self.alreadyGotInformation = true
-        
-                }
-                else {
-                    self.activityIndicator.stopAnimating()
-                    self.raiseError(errorString: error)
-                    self.view.alpha = 1.0
-                    
-                    
-                }
-            }
-            
-        }
+//        if !alreadyGotInformation {
+//           
+//            activityIndicator.center = view.center
+//            activityIndicator.hidesWhenStopped = true
+//            activityIndicator.activityIndicatorViewStyle = .gray
+//            view.addSubview(activityIndicator)
+//            view.alpha = 0.50
+//            activityIndicator.startAnimating()
+//            BreweryDBCLient().getForBeerData() { (data, error) in
+//                if error == "" {
+//                    guard let beerData = data?["data"] as? [[String:AnyObject]] else { return }
+//                    BreweryDBCLient().loadToDataToFirebase(beersInformationArray: beerData)
+//                    self.activityIndicator.stopAnimating()
+//                    self.view.alpha = 1.0
+//                    self.alreadyGotInformation = true
+//        
+//                }
+//                else {
+//                    self.activityIndicator.stopAnimating()
+//                    self.raiseError(errorString: error)
+//                    self.view.alpha = 1.0
+//                    
+//                    
+//                }
+//            }
+//            
+//        }
 
     
     }

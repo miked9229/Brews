@@ -19,22 +19,64 @@ class SearchViewController: UIViewController {
     var user: String?
     var ref: FIRDatabaseReference!
     var beers: [FIRDataSnapshot]! = []
+    let refreshControl = UIRefreshControl()
     fileprivate var _refHandle: FIRDatabaseHandle!
     @IBOutlet weak var beerTable: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     let beerIdentifier = "beerIdentifier"
     var isSearching = false
     var filteredData = [FIRDataSnapshot]()
+    let activityIndicator = UIActivityIndicatorView()
     
     override func viewWillAppear(_ animated: Bool) {
+        
         
         super.viewWillAppear(animated)
         searchBar.delegate = self
         searchBar.returnKeyType = .done
          self.navigationController?.navigationBar.topItem?.title = "Hi \((FIRAuth.auth()!.currentUser?.displayName)!), select a beer!"
         
+        refreshControl.addTarget(self, action: #selector(pulldown), for: .valueChanged)
+        beerTable.addSubview(refreshControl)
+    
     }
     
+    public func pulldown() {
+        
+        refreshControl.beginRefreshing()
+
+                    view.alpha = 0.50
+                    BreweryDBCLient().getForBeerData() { (data, error) in
+                        if error == "" {
+                            guard let beerData = data?["data"] as? [[String:AnyObject]] else { return }
+                            BreweryDBCLient().loadToDataToFirebase(beersInformationArray: beerData)
+                            
+                            performUIUpdatesOnMain {
+                                self.activityIndicator.stopAnimating()
+                                self.view.alpha = 1.0
+                                self.refreshControl.endRefreshing()
+                                
+                            }
+                            
+     
+        
+                        }
+                        else {
+                            performUIUpdatesOnMain {
+                                self.raiseError(errorString: error)
+                                self.view.alpha = 1.0
+                                self.refreshControl.endRefreshing()
+                            }
+
+                            
+                            
+                        }
+                    }
+        
+        
+
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         setupDatabase()
@@ -154,6 +196,14 @@ extension SearchViewController: UISearchBarDelegate {
         }
         
         return newFiltertedData
+    }
+    
+    public func raiseError(errorString: String) {
+        let alert = UIAlertController(title: "", message: errorString, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
+        
+        
     }
     
     
