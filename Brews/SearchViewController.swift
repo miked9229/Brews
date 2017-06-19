@@ -58,8 +58,6 @@ class SearchViewController: UIViewController {
                                 
                             }
                             
-     
-        
                         }
                         else {
                             performUIUpdatesOnMain {
@@ -68,8 +66,6 @@ class SearchViewController: UIViewController {
                                 self.refreshControl.endRefreshing()
                             }
 
-                            
-                            
                         }
                     }
         
@@ -137,10 +133,8 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         var selectedBeer: FIRDataSnapshot!
-        
-        
-        
         if isSearching {
             tableView.deselectRow(at: indexPath, animated: true)
             selectedBeer = filteredData[indexPath.row]
