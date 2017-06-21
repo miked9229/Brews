@@ -20,7 +20,6 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignIn
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setUpFaceBookButtons()
         setUpGoogleButtons()
         setUpBackGroundImage()
@@ -40,47 +39,22 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignIn
     
 // MARK: Configure UI Elements
     
-    fileprivate func setUpTitle() {
-        let margins = view.layoutMarginsGuide
-        let title = UILabel()
-        title.translatesAutoresizingMaskIntoConstraints = false
-        title.text = "Brews"
-        title.font = UIFont(name: "HelveticaNeue-UltraLight", size: 30)
-        view.addSubview(title)
-        title.topAnchor.constraint(equalTo: margins.topAnchor , constant: view.frame.height * 0.10).isActive = true
-        title.leadingAnchor.constraint(equalTo: margins.leadingAnchor).isActive = true
-        title.trailingAnchor.constraint(equalTo: margins.trailingAnchor).isActive = true
-        title.textAlignment = .center
-        title.textColor = UIColor.cyan
-        
-    }
     fileprivate func setUpGoogleButtons() {
         
         let margins = view.layoutMarginsGuide
-        let GoogleButton = GIDSignInButton()
-        GoogleButton.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(GoogleButton)
-        GoogleButton.topAnchor.constraint(equalTo: margins.topAnchor, constant: view.frame.height * 0.80).isActive = true
-        GoogleButton.leadingAnchor.constraint(equalTo: margins.leadingAnchor).isActive = true
-        GoogleButton.trailingAnchor.constraint(equalTo: margins.trailingAnchor).isActive = true
-        GoogleButton.heightAnchor.constraint(equalTo: GoogleButton.widthAnchor, multiplier: 2.0).isActive = true
+        let googleButton = GIDSignInButton()
+        googleButton.style = .wide
+        googleButton.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(googleButton)
+        googleButton.topAnchor.constraint(equalTo: margins.topAnchor, constant: view.frame.height * 0.80).isActive = true
+        googleButton.leadingAnchor.constraint(equalTo: margins.leadingAnchor).isActive = true
+        googleButton.trailingAnchor.constraint(equalTo: margins.trailingAnchor).isActive = true
+        googleButton.heightAnchor.constraint(equalTo: googleButton.widthAnchor, multiplier: 2.0).isActive = true
         GIDSignIn.sharedInstance().uiDelegate = self
+
         
     }
-    fileprivate func setUpBackGroundImage() {
-        let background = UIImage(named: "BackgroundImage")
-        
-        
-        var imageView : UIImageView!
-        imageView = UIImageView(frame: view.bounds)
-        imageView.contentMode =  .scaleAspectFill
-        imageView.clipsToBounds = true
-        imageView.image = background
-        imageView.center = view.center
-        view.addSubview(imageView)
-        self.view.sendSubview(toBack: imageView)
-        
-    }
+
     fileprivate func setUpFaceBookButtons() {
         
         let margins = view.layoutMarginsGuide
@@ -95,6 +69,20 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignIn
         loginButton.readPermissions = ["email", "public_profile"]
         
     }
+    
+    fileprivate func setUpBackGroundImage() {
+        let background = UIImage(named: "BackgroundImage")
+        var imageView : UIImageView!
+        imageView = UIImageView(frame: view.bounds)
+        imageView.contentMode =  .scaleAspectFill
+        imageView.clipsToBounds = true
+        imageView.image = background
+        imageView.center = view.center
+        view.addSubview(imageView)
+        self.view.sendSubview(toBack: imageView)
+        
+    }
+    
 // MARK: View Transition Methods
     func presentNextController() {
         

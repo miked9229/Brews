@@ -28,6 +28,7 @@
 		92C60CA51EC7BA2C00A3479C /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92C60CA41EC7BA2C00A3479C /* FBSDKLoginKit.framework */; };
 		92C60CA71EC7BE7200A3479C /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92C60CA61EC7BE7200A3479C /* FBSDKCoreKit.framework */; };
 		92C60CA91EC7C11C00A3479C /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92C60CA81EC7C11C00A3479C /* Bolts.framework */; };
+		92FDF8DB1EFA01BB00DE2574 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FDF8DA1EFA01BB00DE2574 /* Constants.swift */; };
 		D3AC5A8EAF89E4769DD22274 /* Pods_BrewsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD0B8F0BC4086FBB7FE08281 /* Pods_BrewsTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -80,6 +81,7 @@
 		92C60CA41EC7BA2C00A3479C /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		92C60CA61EC7BE7200A3479C /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		92C60CA81EC7C11C00A3479C /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		92FDF8DA1EFA01BB00DE2574 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A16C28761443C897AA8F6B95 /* Pods-BrewsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BrewsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BrewsTests/Pods-BrewsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		BD0B8F0BC4086FBB7FE08281 /* Pods_BrewsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BrewsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0874D30CC0EED2B7C7BF466 /* Pods-BrewsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BrewsUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BrewsUITests/Pods-BrewsUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -196,9 +198,11 @@
 		92C60C751EC7B33400A3479C /* Brews */ = {
 			isa = PBXGroup;
 			children = (
-				923A00941EF4A3B2007FA087 /* GCDBlackBox.swift */,
-				92C39F561EDB2D5D007BF524 /* Model */,
 				92C60C761EC7B33400A3479C /* AppDelegate.swift */,
+				923A00941EF4A3B2007FA087 /* GCDBlackBox.swift */,
+				92FDF8DA1EFA01BB00DE2574 /* Constants.swift */,
+				92FDF8DC1EFA01F500DE2574 /* Views */,
+				92C39F561EDB2D5D007BF524 /* Model */,
 				92219B951ED9D5ED001C3AC1 /* Client */,
 				92219B941ED9D1D0001C3AC1 /* HelperFiles */,
 				92219B8D1ED9D10C001C3AC1 /* ViewControllers */,
@@ -225,6 +229,13 @@
 				92C60C981EC7B33400A3479C /* Info.plist */,
 			);
 			path = BrewsUITests;
+			sourceTree = "<group>";
+		};
+		92FDF8DC1EFA01F500DE2574 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		DF9A4D6687C279F341913193 /* Pods */ = {
@@ -532,6 +543,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				92219B8F1ED9D12F001C3AC1 /* SearchViewController.swift in Sources */,
+				92FDF8DB1EFA01BB00DE2574 /* Constants.swift in Sources */,
 				92219B971ED9DDEB001C3AC1 /* BreweryDBClient.swift in Sources */,
 				92C60C791EC7B33400A3479C /* LogInViewController.swift in Sources */,
 				92219B911ED9D16C001C3AC1 /* FavoritesViewController.swift in Sources */,
