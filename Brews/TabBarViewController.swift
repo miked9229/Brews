@@ -16,7 +16,6 @@ import FirebaseAuth
 class TabBarViewController: UITabBarController {
     var user: String!
     let activityIndicator = UIActivityIndicatorView()
-    var alreadyGotInformation: Bool! = false
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -26,9 +25,7 @@ class TabBarViewController: UITabBarController {
     public func raiseError(errorString: String) {
         let alert = UIAlertController(title: "", message: errorString, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
-        alreadyGotInformation = false
         present(alert, animated: true, completion: nil)
-
         
     }
     
@@ -37,8 +34,6 @@ class TabBarViewController: UITabBarController {
     let vc = storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as?
         LoginViewController
 
-      
-        
         try? FIRAuth.auth()?.signOut()
         
         present(vc!, animated: true, completion: nil)

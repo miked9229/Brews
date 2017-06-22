@@ -27,6 +27,7 @@ class SearchViewController: UIViewController {
     var isSearching = false
     var filteredData = [FIRDataSnapshot]()
     let activityIndicator = UIActivityIndicatorView()
+    let toolBar = UIToolbar()
     
     override func viewWillAppear(_ animated: Bool) {
         
@@ -34,8 +35,7 @@ class SearchViewController: UIViewController {
         super.viewWillAppear(animated)
         searchBar.delegate = self
         searchBar.returnKeyType = .done
-         self.navigationController?.navigationBar.topItem?.title = "Hi \((FIRAuth.auth()!.currentUser?.displayName)!), select a beer!"
-        
+         self.navigationController?.navigationBar.topItem?.title = "Hi \((FIRAuth.auth()!.currentUser?.displayName)!)!"
         refreshControl.addTarget(self, action: #selector(pulldown), for: .valueChanged)
         beerTable.addSubview(refreshControl)
     
@@ -68,10 +68,6 @@ class SearchViewController: UIViewController {
 
                         }
                     }
-        
-        
-
-        
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -199,9 +195,6 @@ extension SearchViewController: UISearchBarDelegate {
         
         
     }
-    
-    
-    
 }
         
 

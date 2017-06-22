@@ -55,7 +55,7 @@ class RandomBeerViewController: UIViewController {
                         self.shouldTransition = false
             
                 }
-        }
+            }
         
     }
     func transitionToSelectedBeerViewController(beer: FIRDataSnapshot) {
