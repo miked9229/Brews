@@ -25,7 +25,6 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignIn
         setUpBackGroundImage()
         listenForUserAuthentication()
   
-
     }
     
 

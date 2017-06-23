@@ -35,6 +35,7 @@ class SelectedBeerViewController: UIViewController {
         downloadImage()
        listenForUserAuthentication()
        disableFavoritesButton()
+      self.navigationController?.navigationBar.topItem?.title = ""
     
        
         
