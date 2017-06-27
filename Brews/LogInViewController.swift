@@ -32,7 +32,8 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignIn
         showEmailAddress()
     }
     func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
-        
+        print("logout occurred....")
+    
     }
 
     
