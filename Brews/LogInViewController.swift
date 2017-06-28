@@ -33,6 +33,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignIn
     }
     func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
         print("logout occurred....")
+        
     
     }
 
@@ -56,7 +57,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignIn
     }
 
     fileprivate func setUpFaceBookButtons() {
-        
+        FBSDKAccessToken.setCurrent(nil)
         let margins = view.layoutMarginsGuide
         let loginButton = FBSDKLoginButton()
         loginButton.translatesAutoresizingMaskIntoConstraints = false
@@ -66,6 +67,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignIn
         loginButton.trailingAnchor.constraint(equalTo: margins.trailingAnchor).isActive = true
         loginButton.heightAnchor.constraint(equalTo: loginButton.widthAnchor, multiplier: 2.0).isActive = true
         loginButton.delegate = self
+        
         loginButton.readPermissions = ["email", "public_profile"]
         
     }

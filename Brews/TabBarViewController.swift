@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import FirebaseDatabase
 import FirebaseAuth
+import FBSDKLoginKit
 
 // MARK: TabBarViewController: UITabBarViewController
 
@@ -35,6 +36,7 @@ class TabBarViewController: UITabBarController {
         LoginViewController
 
         try? FIRAuth.auth()?.signOut()
+        
         
         present(vc!, animated: true, completion: nil)
  
