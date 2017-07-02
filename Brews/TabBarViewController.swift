@@ -37,6 +37,7 @@ class TabBarViewController: UITabBarController {
 
         try? FIRAuth.auth()?.signOut()
         
+        FBSDKAccessToken.current() = nil
         
         present(vc!, animated: true, completion: nil)
  
