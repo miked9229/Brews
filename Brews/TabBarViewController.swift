@@ -11,7 +11,7 @@ import UIKit
 import FirebaseDatabase
 import FirebaseAuth
 import FBSDKLoginKit
-
+import GoogleSignIn
 // MARK: TabBarViewController: UITabBarViewController
 
 class TabBarViewController: UITabBarController {
@@ -37,8 +37,11 @@ class TabBarViewController: UITabBarController {
 
         try? FIRAuth.auth()?.signOut()
         
-        FBSDKAccessToken.current() = nil
+        FBSDKAccessToken.setCurrent(nil)
         
+        GIDSignIn.sharedInstance().signOut()
+
+            
         present(vc!, animated: true, completion: nil)
  
     

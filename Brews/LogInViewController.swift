@@ -42,6 +42,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignIn
     
     fileprivate func setUpGoogleButtons() {
         
+        
         let margins = view.layoutMarginsGuide
         let googleButton = GIDSignInButton()
         googleButton.style = .wide
@@ -57,7 +58,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignIn
     }
 
     fileprivate func setUpFaceBookButtons() {
-        FBSDKAccessToken.setCurrent(nil)
+
         let margins = view.layoutMarginsGuide
         let loginButton = FBSDKLoginButton()
         loginButton.translatesAutoresizingMaskIntoConstraints = false
