@@ -21,13 +21,13 @@ class FavoritesViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
        
         super.viewWillAppear(animated)
-        self.navigationController?.navigationBar.topItem?.title = "Here are your favorite beers"
-        
-
+        tableView.reloadData()
+        //self.navigationController?.navigationBar.topItem?.title = "Here are your favorite beers"
+ 
     }
     override func viewDidLoad() {
         listenForUserAuthentication()
-        tableView.reloadData()
+     
     
     }
     

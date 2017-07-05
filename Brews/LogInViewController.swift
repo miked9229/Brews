@@ -15,7 +15,7 @@ import FirebaseDatabase
 
 // MARK: LoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignInUIDelegate, UINavigationControllerDelegate
 
-class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignInUIDelegate, UINavigationControllerDelegate {
+class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignInUIDelegate {
     var currentUser: String!
 
     override func viewDidLoad() {
@@ -41,7 +41,6 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignIn
 // MARK: Configure UI Elements
     
     fileprivate func setUpGoogleButtons() {
-        
         
         let margins = view.layoutMarginsGuide
         let googleButton = GIDSignInButton()

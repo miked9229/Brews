@@ -72,7 +72,7 @@ class SelectedBeerViewController: UIViewController {
         activityIndicator.startAnimating()
         
         beerRef.data(withMaxSize: 1 * 1024 * 1024) { (data, error) in
-            if let error = error {
+            if error != nil {
                return
             }
             self.activityIndicator.stopAnimating()
