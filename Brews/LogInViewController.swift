@@ -124,8 +124,10 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignIn
         
     }
     
+// MARK: Method that Segues past Login Screen For Users
     
     public func listenForUserAuthentication() {
+        // TODO: Figure out a way to only have this method called once
         
         FIRAuth.auth()!.addStateDidChangeListener() { auth, user in
             if user != nil {
